@@ -1,0 +1,436 @@
+/* --- BASE --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* --- CARGA --- */
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+.loader-content { text-align: center; width: 350px; }
+.loading-gif { width: 250px; display: block; margin: 0 auto 20px; }
+.progress-container { width: 100%; height: 12px; background-color: #e0e0e0; border: 2px solid #555; border-radius: 4px; overflow: hidden; }
+.progress-bar { width: 0%; height: 100%; background-color: #777; }
+
+/* --- NAVBAR --- */
+.navbar-custom {
+    background-color: #3366FF !important;
+    height: 70px;
+    position: relative;
+    z-index: 1060;
+}
+.navbar-brand img {
+    height: 110px;
+    position: absolute;
+    top: 15px;
+    z-index: 1070;
+}
+.navbar-nav .nav-link { color: white !important; font-weight: 500; margin-left: 20px; }
+
+/* --- BANNER --- */
+.portada-banner {
+    background-image: url('../img/uma_banner.jpg');
+    background-size: cover;
+    background-position: center 10%;
+    height: 90vh;
+    position: relative;
+    width: 100%;
+}
+.video-miniatura {
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+    width: 250px;
+    cursor: pointer;
+    border: 3px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    z-index: 50;
+    transition: transform 0.3s;
+}
+.video-miniatura:hover { transform: scale(1.05); }
+.video-miniatura img { width: 100%; display: block; filter: brightness(0.8); }
+.video-miniatura:hover img { filter: brightness(1); }
+
+.botones-tienda {
+    position: absolute;
+    left: 40px;
+    bottom: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 50;
+}
+.boton-link img { width: 150px; border-radius: 8px; transition: 0.2s; }
+.boton-link:hover img { transform: translateY(-5px); filter: brightness(1.1); }
+
+/* --- FRANJAS SEPARADORAS --- */
+.franja-separadora {
+    color: white !important;
+    text-align: center;
+    padding: 15px 0;
+    font-weight: 900;
+    font-size: 1.8rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.franja-separadora span { text-shadow: 2px 2px 0px rgba(0,0,0,0.2); }
+.franja-separadora.rosa { background-color: #ff6ecb !important; border-bottom: 4px solid #c055ac !important; }
+.franja-separadora.naranja { background-color: #f47a07 !important; border-bottom: 4px solid #d46600 !important; }
+
+/* --- NOTICIAS --- */
+.seccion-noticias-img {
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../img/Tracen_Academy.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 3rem 0 !important; 
+    width: 100%;
+}
+.seccion-noticias-img .card {
+    background-color: white !important;
+    border: 2px solid #ff6ecb !important;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.seccion-noticias-img .card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 10px 25px rgba(255, 110, 203, 0.5) !important; 
+}
+
+/* --- BOTONES DE NOTICIAS --- */
+.btn-rosa {
+    background-color: #ff6ecb !important;
+    color: white !important;
+    font-family: 'Arial Black', sans-serif;
+    font-weight: 900;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 6px; 
+    border: none;
+    box-shadow: 0 5px 0px #c055ac; 
+    display: inline-block;
+    transition: all 0.1s ease;
+    text-decoration: none;
+}
+
+/* EFECTO PRESIÓN */
+.btn-rosa:hover {
+    background-color: #ff8cd6 !important;
+    transform: translateY(2px);
+    box-shadow: 0 3px 0px #c055ac;
+    color: white !important;
+}
+
+.btn-rosa:active {
+    transform: translateY(5px);
+    box-shadow: 0 0px 0px #c055ac;
+}
+
+/* --- CONTENIDO --- */
+.seccion-mosaico-fondo {
+    background-image: url('../img/fondo_dos.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    position: relative;
+    width: 100%;
+    padding: 60px 0;
+}
+.seccion-mosaico-fondo::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    z-index: 0;
+}
+.seccion-mosaico-fondo .container { position: relative; z-index: 1; }
+
+/* --- BOTONES DE CONTENIDO --- */
+.boton-uma {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 3px solid #eee;
+    text-decoration: none !important;
+    height: 250px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* botón de ancho */
+.col-12 .boton-uma { height: 380px; }
+
+/* Efecto de presiónclic */
+.boton-uma:active {
+    transform: scale(0.97);
+    filter: brightness(0.9);
+}
+
+/* zoom al pasar el mouse */
+.img-fondo {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+    z-index: 1;
+}
+
+/* Capa naranja */
+.hover-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(255, 152, 0, 0.75);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Interacciones */
+.boton-uma:hover .hover-overlay { opacity: 1; }
+.boton-uma:hover .img-fondo { transform: scale(1.1); }
+.boton-uma:hover { 
+    border-color: white; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+}
+
+/* --- TIPOGRAFÍA DE LOS BOTONES --- */
+.etiqueta-inclinada {
+    background-color: transparent !important;
+    border: none !important;
+    transform: none !important;
+    padding: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.etiqueta-inclinada span {
+    display: block;
+    color: #ffffff;
+    font-family: 'Arial Black', sans-serif; 
+    font-weight: 900;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-style: italic;
+    text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.9);
+    transition: all 0.3s ease;
+}
+
+/* Animación del texto */
+.boton-uma:hover .etiqueta-inclinada span {
+    transform: scale(1.1);
+    letter-spacing: 2px;
+}
+
+/* --- FOOTER --- */
+.footer-social {
+    background-color: #f0f2ff !important;
+    border-top: 1px solid #e0e0e0;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.social-text {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.social-icons a {
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+/* ICONOS COLORES */
+.icon-x  { color: #000000; }
+.icon-fb { color: #1877F2; }
+.icon-yt { color: #FF0000; }
+.icon-ds { color: #5865F2; }
+
+.social-icons a:hover {
+    transform: translateY(-5px) scale(1.1);
+    opacity: 0.8;
+}
+
+/* EFECTO */
+@media (max-width: 768px) {
+    .footer-social .container { flex-direction: column; gap: 15px; }
+    .etiqueta-inclinada span { font-size: 1.8rem; }
+    .boton-uma { height: 200px; }
+}
+
+/* --- FUENTES IMAGENES --- */
+
+.btn-gameplay .img-fondo { 
+    background-image: url('../img/gameplay_boton.jpg'); 
+}
+
+.btn-medio .img-fondo { 
+    background-image: url('../img/medios.jpg'); 
+}
+
+.btn-personajes .img-fondo { 
+    background-image: url('../img/personajes.jpg'); 
+}
+
+/* ==========================================================================
+   GAMEPLAY 
+   ========================================================================== */
+
+body.page-gameplay {
+    height: 100vh;
+    overflow: hidden; 
+}
+
+.page-gameplay .gameplay-fondo {
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), 
+                url('../img/carreras.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.page-gameplay #carruselGameplayUI {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    position: relative;
+}
+
+.page-gameplay .carousel-item {
+    height: 100vh;
+    background: transparent !important;
+}
+
+/* --- CONTENEDOR PRINCIPAL DE TEXTOS --- */
+.page-gameplay .caption-gameplay {
+    position: absolute;
+    top: 5% !important;  
+    bottom: 5% !important; 
+    left: 10% !important;
+    text-align: left;
+    z-index: 999 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* --- BLOQUE SUPERIOR (Fotos y Título) --- */
+.page-gameplay .bloque-superior {
+    margin-top: 50px; 
+}
+
+.page-gameplay .gameplay-galeria {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.page-gameplay .galeria-item {
+    width: 200px;
+    border: 3px solid #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    opacity: 0; 
+}
+
+.page-gameplay .banner-titulo h1 {
+    margin: 0;
+    color: #fff;
+    margin-top: 40px;
+    font-size: 2.8rem;
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    line-height: 1;
+    text-shadow: -3px -3px 0 #2c6b00, 3px -3px 0 #2c6b00, -3px 3px 0 #2c6b00, 3px 3px 0 #2c6b00;
+}
+
+/* --- PERSONAJE--- */
+.page-gameplay .personaje-flotante {
+    position: absolute;
+    right: 5%;
+    bottom: 0;
+    height: 85vh;
+    z-index: 1 !important;
+    pointer-events: none;
+}
+
+.page-gameplay .personaje-flotante img {
+    height: 100%;
+    width: auto;
+    display: block;
+    filter: drop-shadow(-10px 0 15px rgba(0,0,0,0.2));
+}
+
+/* --- CUADRO BLANCO --- */
+.page-gameplay .info-box-gameplay {
+    background: rgba(255, 255, 255, 0.98);
+    padding: 20px 30px;
+    border-left: 20px solid #ff6ecb;
+    max-width: 480px;
+    color: #333;
+    font-weight: bold;
+    box-shadow: 15px 15px 40px rgba(0,0,0,0.4);
+    margin-left: 600px;
+    margin-bottom: 40px;
+    z-index: 1200 !important;
+    position: relative;
+    clip-path: polygon(0% 0%, 95% 0%, 100% 100%, 0% 100%);
+}
+
+/* --- FLECHAS Y ANIMACIONES --- */
+.carousel-control-prev, .carousel-control-next { z-index: 1300 !important; }
+.carousel-control-prev-icon, .carousel-control-next-icon { background-color: #ff6ecb; border-radius: 50%; padding: 20px; }
+
+@keyframes entradaCaptura {
+    0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes fadeInText {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.carousel-item.active .galeria-item:nth-child(1) { animation: entradaCaptura 0.5s ease-out forwards 0.2s; }
+.carousel-item.active .galeria-item:nth-child(2) { animation: entradaCaptura 0.5s ease-out forwards 0.4s; }
+.carousel-item.active .banner-titulo { animation: fadeInText 0.6s ease-out forwards 0.8s; opacity: 0; }
+.carousel-item.active .info-box-gameplay { animation: fadeInText 0.6s ease-out forwards 1s; opacity: 0; }
